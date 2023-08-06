@@ -1,0 +1,243 @@
+/*CONFIG GERAL */
+*{
+    margin: 0;
+    padding: 0;
+}
+header{
+    text-align: center;
+    background-color: red;
+    color: white;
+}
+main{
+    width: 90%;
+    margin: auto;
+}
+.espa{
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+
+/*NAV INICIAL */
+
+.nav1{
+    display: flex;
+    justify-content: center;
+    flex-flow: row;
+}
+.mostra{
+    width: 200px;
+    height: 25px;
+    background-color: transparent;
+    border: solid black 1px;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+    transition: 0.4s;
+    -webkit-transition: 0.4s;
+    -moz-transition: 0.4s;
+    -ms-transition: 0.4s;
+    -o-transition: 0.4s;
+}
+.mostra:hover{
+    background-color: black;
+    color: white;
+    border: solid white 1px;
+}
+
+/*CADASTRO*/
+
+.t1{
+    text-align: center;
+}
+
+.formu{
+    width: 95%;
+    margin: auto;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    background-color: gray;
+}
+
+.caixa1{
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+}
+
+.divcol{
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+}
+
+.divlin{
+    display: flex;
+    flex-flow: row;
+    justify-content: center;
+}
+
+.entrada{
+    width: 60%;
+    height: 20px;
+    text-align: center;
+    border: solid black 1px;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+}
+
+.divbtn{
+    display: flex;
+    justify-content: center;
+}
+.btn{
+    width: 100px;
+    height: 25px;
+    background-color: transparent;
+    border: solid black 1px;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+    transition: 0.4s;
+    -webkit-transition: 0.4s;
+    -moz-transition: 0.4s;
+    -ms-transition: 0.4s;
+    -o-transition: 0.4s;
+}
+.btn:hover{
+    background-color: black;
+    color: white;
+    border: solid white 1px;
+}
+
+/*MOSTRAR TUDO */
+
+.result{
+    width: 80%;
+    margin: auto;
+}
+.conteiner-res{
+    display: flex;
+    justify-content: center;
+}
+
+table, th, td{
+    margin: auto;
+    padding: 5px;
+    text-align: center;
+    border: solid black 1px;
+    border-collapse: collapse;
+}
+
+/*PESQUISA*/
+
+.pesq{
+    display: flex;
+    justify-content: center;
+}
+
+.conteiner-select{
+    display: flex;
+    justify-content: center;
+}
+.selecionar{
+    text-align: center;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+}
+
+.formu2{
+    width: 30%;
+}
+
+.entrada2{
+    width: 100%;
+    height: 20px;
+    text-align: center;
+    border: solid black 1px;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+}
+
+/*EDIÇÃO*/
+
+.conteiner-input{
+    display: flex;
+    align-items: center;
+    flex-flow: column;
+}
+
+
+/*JANELA 1*/
+.jan1{
+    margin: auto;
+    width: 90%;
+    height: 90%;
+    border: solid black 5px;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+    transition: 0.4s;
+    -webkit-transition: 0.4s;
+    -moz-transition: 0.4s;
+    -ms-transition: 0.4s;
+    -o-transition: 0.4s;
+}
+.fechar{
+    display: flex;
+    justify-content: right;
+}
+.fechamen{
+    cursor: pointer;
+    color: red;
+}
+
+/*JANELA 2*/
+.jan2{
+    margin: auto;
+    height: 90%;
+    width: 90%;
+    border: solid black 5px;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+    transition: 0.4s;
+    -webkit-transition: 0.4s;
+    -moz-transition: 0.4s;
+    -ms-transition: 0.4s;
+    -o-transition: 0.4s;
+}
+.fechamen2{
+    cursor: pointer;
+    color: red;
+}
+
+@media screen and (min-width: 600px){
+    .jan1{
+        height: 90%;
+        width: 40%;
+    }
+    .jan2{
+        height: 90%;
+        width: 40%;
+    }
+}
