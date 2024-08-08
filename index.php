@@ -24,7 +24,7 @@
         </div>
             <form action="<?php echo $_SERVER['PHP_SELF'] ?>" method="get">
                 <div class="divbtn">
-                    <input type="submit" name="submit2" value="MOSTRAR ALUNOS" class="mostra">
+                    <input type="submit" name="submit2" value="MOSTRAR usuarios" class="mostra">
                 </div>
             </form>
         <div>
@@ -41,19 +41,19 @@
                         $host = "localhost";
                         $usuario = "root";
                         $senha = "";
-                        $bd = "banco1";
+                        $bd = "bd_lista_usuarios";
                     $con = mysqli_connect($host, $usuario, $senha, $bd);
                     if(!$con){
                         die("Connection Failed" .mysqli_connect_errno());
                     }
 
-                    $mostra = "select * from alunos;";
+                    $mostra = "select * from usuarios;";
                     $result = mysqli_query($con, $mostra);
 
                     while($registro = mysqli_fetch_array($result)){
                         $id = $registro['id'];
                         $nom = $registro['nome'];
-                        $ida = $registro['idade'];
+                        $ida = $registro['ano'];
                         $sala = $registro['salario'];
                         echo "<tr><td>$id</td>";
                         echo "<td>$nom</td>";
@@ -105,7 +105,7 @@
                         $host = "localhost";
                         $usuario = "root";
                         $senha = "";
-                        $bd = "banco1";
+                        $bd = "bd_lista_usuarios";
                         $con = mysqli_connect($host, $usuario, $senha, $bd);
                         if(!$con){
                             die("Connection Failed" .mysqli_connect_errno());
@@ -114,7 +114,7 @@
                     $condi = $_GET['tp'];
                     if($condi == 'a'){
                         $busc = $_GET['pesquisa'];
-                        $buscar = "select * from alunos where id = '$busc'";
+                        $buscar = "select * from usuarios where id = '$busc'";
                         $pesquisa = mysqli_query($con,$buscar);
 
                         while($dados = $pesquisa->fetch_assoc()){
@@ -122,7 +122,7 @@
                             <tr>
                                 <td> <?php echo $dados['id']; ?> </td>
                                 <td> <?php echo $dados['nome']; ?> </td>
-                                <td> <?php echo $dados['idade']; ?> </td>
+                                <td> <?php echo $dados['ano']; ?> </td>
                                 <td> <?php echo $dados['salario']; ?> </td>
                             </tr>
                             <?php
@@ -130,7 +130,7 @@
                     }
                     if($condi == 'b'){
                         $busc = $_GET['pesquisa'];
-                        $buscar = "select * from alunos where nome like '%$busc%'";
+                        $buscar = "select * from usuarios where nome like '%$busc%'";
                         $pesquisa = mysqli_query($con,$buscar);
 
                         while($dados = $pesquisa->fetch_assoc()){
@@ -138,7 +138,7 @@
                             <tr>
                                 <td> <?php echo $dados['id']; ?> </td>
                                 <td> <?php echo $dados['nome']; ?> </td>
-                                <td> <?php echo $dados['idade']; ?> </td>
+                                <td> <?php echo $dados['ano']; ?> </td>
                                 <td> <?php echo $dados['salario']; ?> </td>
                             </tr>
                             <?php
@@ -146,7 +146,7 @@
                     }
                     if($condi == 'c'){
                         $busc = $_GET['pesquisa'];
-                        $buscar = "select * from alunos where idade = '$busc'";
+                        $buscar = "select * from usuarios where ano = '$busc'";
                         $pesquisa = mysqli_query($con,$buscar);
 
                         while($dados = $pesquisa->fetch_assoc()){
@@ -154,7 +154,7 @@
                             <tr>
                                 <td> <?php echo $dados['id']; ?> </td>
                                 <td> <?php echo $dados['nome']; ?> </td>
-                                <td> <?php echo $dados['idade']; ?> </td>
+                                <td> <?php echo $dados['ano']; ?> </td>
                                 <td> <?php echo $dados['salario']; ?> </td>
                             </tr>
                             <?php
@@ -162,7 +162,7 @@
                     }
                     if($condi == 'd'){
                         $busc = $_GET['pesquisa'];
-                        $buscar = "select * from alunos where salario = '$busc'";
+                        $buscar = "select * from usuarios where salario = '$busc'";
                         $pesquisa = mysqli_query($con,$buscar);
 
                         while($dados = $pesquisa->fetch_assoc()){
@@ -170,7 +170,7 @@
                             <tr>
                                 <td> <?php echo $dados['id']; ?> </td>
                                 <td> <?php echo $dados['nome']; ?> </td>
-                                <td> <?php echo $dados['idade']; ?> </td>
+                                <td> <?php echo $dados['ano']; ?> </td>
                                 <td> <?php echo $dados['salario']; ?> </td>
                             </tr>
                             <?php
@@ -203,8 +203,8 @@
 
             <div class="divlin espa">
                 <div class="divcol">
-                    <label for="idade">ANO:</label>
-                    <input class="entrada" type="number" name="nascimento" placeholder="IDADE" required max="2023">
+                    <label for="ano">ANO:</label>
+                    <input class="entrada" type="number" name="nascimento" placeholder="ano" required max="2023">
                 </div>
 
                 <div class="divcol">
@@ -224,7 +224,7 @@
                     $host = "localhost";
                     $usuario = "root";
                     $senha = "";
-                    $bd = "banco1";
+                    $bd = "bd_lista_usuarios";
                     $con = mysqli_connect($host, $usuario, $senha, $bd);
                     if(!$con){
                         die("Connection Failed" .mysqli_connect_errno());
@@ -233,7 +233,7 @@
                     $nome= $_GET['nome'] ?? 'teste';
                     $ano= $_GET['nascimento'] ?? 0;
                     $sal = $_GET['salario'] ?? 0;
-                    $insert = "insert into alunos values (DEFAULT,'$nome', '$ano', '$sal');";
+                    $insert = "insert into usuarios values (DEFAULT,'$nome', '$ano', '$sal');";
 
                     mysqli_query($con, $insert);
                     mysqli_close($con);
@@ -289,27 +289,27 @@
                     $host = "localhost";
                     $usuario = "root";
                     $senha = "";
-                    $bd = "banco1";
+                    $bd = "bd_lista_usuarios";
                     $con = mysqli_connect($host, $usuario, $senha, $bd);
                     if(!$con){
                         die("Connection Failed" .mysqli_connect_errno());
                     }
 
                     $buscid = $_GET['iden'] ?? 00;
-                    $buscar = "select * from alunos where id = '$buscid'";
+                    $buscar = "select * from usuarios where id = '$buscid'";
                     $pesquisa = mysqli_query($con,$buscar);
 
                     while($dados = $pesquisa->fetch_assoc()){
                         $origi_id = $dados['id'] ?? 00;
                         $origi_nome = $dados['nome'] ?? 'teste';
-                        $origi_ano = $dados['idade'] ?? 00;
+                        $origi_ano = $dados['ano'] ?? 00;
                         $origi_sal = $dados['salario'] ?? 00;
                     }
 
                     $editado_nome = $_GET['alternome'] ?? 'teste';
                     $editado_ano = $_GET['alterano'] ?? 000;
                     $editado_sal = $_GET['altersal'] ?? 000;
-                    $editor = "update alunos set nome = '$editado_nome', idade = '$editado_ano', salario = '$editado_sal' where id = '$buscid'";
+                    $editor = "update usuarios set nome = '$editado_nome', ano = '$editado_ano', salario = '$editado_sal' where id = '$buscid'";
                     $editar = mysqli_query($con, $editor);
                 ?>
 
@@ -318,14 +318,14 @@
                     $host = "localhost";
                     $usuario = "root";
                     $senha = "";
-                    $bd = "banco1";
+                    $bd = "bd_lista_usuarios";
                     $con = mysqli_connect($host, $usuario, $senha, $bd);
                     if(!$con){
                         die("Connection Failed" .mysqli_connect_errno());
                     }
 
                     $linha = $_GET['iden'];
-                    $deleta = "delete from alunos where id = '$linha'";
+                    $deleta = "delete from usuarios where id = '$linha'";
                     $deletar = mysqli_query($con, $deleta);
                    }
                    if(isset($_GET['deletar']))
